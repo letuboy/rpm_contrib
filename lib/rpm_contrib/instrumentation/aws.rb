@@ -13,9 +13,9 @@ DependencyDetection.defer do
   
   executes do
     # Instrument connections to the AWS-S3 service
-    ::AWS::S3::Connection::Management::ClassMethods.module_eval do
-      add_method_tracer :establish_connection!, 'AWS-S3/establish_connection!'
-    end
+    #::AWS::S3::Connection::Management::ClassMethods.module_eval do
+    #  add_method_tracer :establish_connection!, 'AWS-S3/establish_connection!'
+    #end
 
     # Instrument methods on Bucket
     ::AWS::S3::Bucket.instance_eval do
